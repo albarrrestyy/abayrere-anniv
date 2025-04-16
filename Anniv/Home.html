@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anniversary Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script>
+    // Cek apakah user udah masuk dari halaman welcome
+    if (!localStorage.getItem("sudahMasukAnniv")) {
+      window.location.href = "index.html";
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(135, 206, 250, 0.3);
+      z-index: 1;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 3.2em;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 0 0 15px rgba(255, 192, 203, 0.7);
+      z-index: 2;
+      animation: fadeInDown 2s ease forwards;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(255, 192, 203, 0.2);
+      margin: 25px auto;
+      max-width: 520px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(255, 192, 203, 0.4);
+    }
+
+    .card h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #ff69b4;
+      font-weight: 600;
+    }
+
+    .love-float {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    .love {
+      position: absolute;
+      color: #ffb6c1;
+      font-size: 24px;
+      animation: floatLove 6s linear infinite;
+    }
+
+    .card {
+      background: #ffe4ec;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 192, 203, 0.3);
+      padding: 30px;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .card:nth-child(1) {
+      background: linear-gradient(145deg, #ffe0ec, #f8cdda);
+    }
+    .card:nth-child(2) {
+      background: linear-gradient(145deg, #e0f7ff, #d2eafd);
+    }
+    .card:nth-child(3) {
+      background: linear-gradient(145deg, #fdf1ff, #e8d9f1);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(255, 182, 193, 0.5);
+    }
+
+    .card h2 {
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+
+
+    @keyframes floatLove {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Footer baru yang aesthetic */
+    footer {
+      background: linear-gradient(to right, #ffcce0, #e6ccff);
+      color: #6b3f77;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .card {
+        padding: 20px;
+        font-size: 0.95em;
+      }
+
+      footer {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="love-float"></div>
+
+  <header>
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <h1>Our Special Journey</h1>
+  </header>
+
+  <section>
+    <a href="Kisah Kita.html" class="card">
+      <h2>Kisah Kita</h2>
+      <p>Dari pertemuan pertama, hingga hari ini... semuanya terasa indah karena ada kamu, Rere.</p>
+    </a>
+    <a href="Kenangan Manis.html" class="card">
+      <h2>Kenangan Manis</h2>
+      <p>Setiap foto, setiap senyum, adalah bagian dari cerita cinta kita yang gak akan pernah hilang.</p>
+    </a>
+    <a href="Untukmu.html" class="card">
+      <h2>Untukmu</h2>
+      <p>Website ini kubuat dengan sepenuh hati... untuk kamu yang selalu jadi alasanku tersenyum.</p>
+    </a>
+  </section>
+
+  <footer>
+    &copy; 2025 Abay & Rere | Forever Sayaang
+  </footer>
+
+  <audio autoplay loop hidden>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const loveFloat = document.querySelector('.love-float');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('love');
+      heart.innerText = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      loveFloat.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 500);
+  </script>
+  <!-- Konten utama home -->
+<!-- ... -->
+
+<!-- Reset akses (buat developer/Abay sendiri) -->
+<div style="margin-top: 50px; text-align: center;">
+  <button onclick="localStorage.removeItem('sudahMasukAnniv'); alert('Akses sudah direset. Buka halaman akan diarahkan ke welcome.')"
+    style="background: none; border: none; color: white; font-size: 12px; opacity: 0.3; cursor: pointer;">
+    Reset Akses
+  </button>
+</div>
+</body>
+</html>
