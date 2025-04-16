@@ -28,6 +28,50 @@
       z-index: 1;
     }
 
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #3b3c58, #5d5f78);
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 90%;
+      box-sizing: border-box;
+    }
+
+    h1, h2 {
+      font-size: clamp(2rem, 5vw, 4rem); /* responsif! */
+      margin: 0;
+      color: white;
+      text-shadow: 0 0 10px #ffbde2;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #f8b6cc;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px #f8b6cc;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #f8b6cc;
+    }
+    
     video.bg-video {
       position: absolute;
       top: 0;
